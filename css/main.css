@@ -1,0 +1,243 @@
+/*General*/
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body, html {
+    height: 100vh;
+    background-image: url('../images/main-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -1;
+}
+
+/*Grid*/
+body {
+    grid-template-areas:  'header header header header'
+                          '. main main .'
+                          'footer footer footer footer';
+    grid-template-columns: 20% repeat(2, 1fr) 20%;
+    grid-template-rows: 10% 1fr 3%;
+    display: grid;
+    grid-row-gap: 10%;
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+/*Header*/
+header {
+    background-color: rgb(255, 255, 255);
+    border-bottom: rgb(77, 76, 76) solid 1px;
+}
+
+header .header-title {
+    padding: 20px;
+    float: left;
+    color: rgb(116, 113, 113);
+}
+
+/*Navbar*/
+header nav ul li a {
+    text-decoration: none;
+    color: rgb(167, 167, 167);
+}
+
+header nav ul li a:hover {
+    font-weight: bold;
+}
+
+header nav ul li {
+    display: inline;
+    padding: 0 30px;
+}
+
+header nav ul {
+    text-align: right;
+    padding: 30px;
+}
+
+header nav #toggle {
+    float: right;
+    display: none;
+}
+
+header nav label {
+    float: right;
+    padding: 30px;
+    font-size: 20px;
+    display: none;
+}
+
+header nav ul span {
+    color: rgb(144, 238, 144);
+}
+
+/*Main*/
+main {
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    text-align: center;
+    border: 2px solid rgb(231, 227, 227);
+    border-radius: 10px;
+    position: relative;
+    z-index: 5;
+}
+
+#form-heading {
+    text-align: center;
+    padding: 50px 0;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+}
+
+.form-text-input-container {
+    padding: 10px;
+}
+
+.form-text-input-container input {
+    border: 2px solid rgb(207, 204, 204);
+    border-radius: 10px;
+    width: 50%;
+    height: 30px;
+    text-align: center;
+    font-size: 20px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(75, 74, 74);
+}
+
+.form-text-input-container input:focus {
+    outline: none;
+}
+
+.form-check-input-container {
+    padding: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.form-button-container {
+    padding: 20px;
+}
+
+.form-button-container input {
+   width: 100px;
+   height: 40px;
+   font-size: 20px;
+   background-color: rgb(255, 255, 255);
+   color: rgb(144, 238, 144);
+   border-radius: 10px;
+   border: 2px solid rgb(207, 204, 204);
+}
+
+.form-button-container input:hover {
+    font-weight: bold;
+    border: 4px solid rgb(207, 204, 204);
+    cursor: pointer;
+}
+
+/*Footer*/
+footer {
+    background-color: rgb(102, 100, 100);
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+/*Resolutions*/
+@media only screen and (max-width: 875px) {
+    
+    body {
+        grid-template-areas:  'header'
+                              'main'
+                              'footer';
+        grid-template-columns: 100%;
+        grid-template-rows: 10% 1fr 5%;
+    }
+
+    nav ul li {
+        text-align: center;
+    }
+
+    header nav ul li a {
+        text-decoration: none;
+        color: rgb(167, 167, 167);
+        display: block;
+        padding:  0 30px;
+        text-align: center;
+    }
+    
+    header nav ul li a:hover {
+        font-weight: bold;
+    }
+    
+    header nav ul {
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+        position: absolute;
+        z-index: 10;
+        width: 100%;
+        display: none;
+        padding: 0;
+    }
+
+    header .header-title {
+        position: absolute;
+        padding: 30px;
+    }
+
+    header nav label {
+        float: right;
+        font-size: 30px;
+        display: block;
+        z-index: 20;
+        padding: 30px;
+        cursor: pointer;
+        position: absolute;
+        right: 5%;
+    }
+
+    #toggle {
+        display: block;
+    }
+    
+    #toggle:checked + ul {
+        display: block;
+    }
+
+    
+}
+
+@media only screen and (max-width: 415px){
+    header .header-title h1 {
+        font-size: 25px;
+        padding: 0;
+    }
+
+    header nav label {
+        padding: 25px 10px;
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 320px){
+    header .header-title h1 {
+        font-size: 20px;
+        padding: 0;
+    }
+
+    header nav label {
+        padding: 25px 10px;
+    }
+}
